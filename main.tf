@@ -3,9 +3,9 @@ provider "kubernetes" {
   config_path = "~/.kube/config"
 }
 
-# 
-resource "kubernetes_namespace" "lab" {
+# we create a "namespace" resource called "devops-project"
+resource "kubernetes_namespace_v1" "dev_env" {
   metadata {
-    name = "sap-intern-project"
+    name = "devops-project"
   }
 }
