@@ -12,4 +12,4 @@ env
 .vscode
 .idea
 
-dbt_project/profiles.yml
+.annotations
