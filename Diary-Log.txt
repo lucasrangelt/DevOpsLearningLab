@@ -2,3 +2,5 @@ Day 7: Set up the DevOpsLab path in preparation for a new project involving infr
 Day 8: I studied and planned multiple things about what I should implement, and set up a Minikube cluster.
 Day 9: Set up Terraform and planned the infrastructure.
 Day 10: Made folder changes, prepared Docker and created the main.py file.
+Day 11: Made folder changes and created my devcontainer to run my developer environment on Docker.
+Day 12: Fixed bugs on the devcontainer
