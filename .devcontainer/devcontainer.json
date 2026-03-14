@@ -2,6 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Python Dev Container Environment",
+	"runArgs": ["--name", "heartbeat-dev-container"],
 	// "dockerComposeFile": "../docker-compose.yml",
 	// "service": "app",
 	// "workspaceFolder": "/workspaces/app",

@@ -4,3 +4,4 @@ Day 9: Set up Terraform and planned the infrastructure.
 Day 10: Made folder changes, prepared Docker and created the main.py file. Tested it using a temporary container.
 Day 11: Made folder changes and created my devcontainer to run my developer environment on Docker.
 Day 12: Fixed bugs on the devcontainer.
+Day 13: Set up my "deployment.yml" file.
