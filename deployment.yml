@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: heartbeat-app
-        image: heartbeat:latest
+        image: heartbeat-app:v1
         imagePullPolicy: Never # Crucial if you want to use the local image you just built
         ports:
         - containerPort: 5000
