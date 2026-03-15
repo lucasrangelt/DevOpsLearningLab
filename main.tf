@@ -3,9 +3,26 @@ provider "kubernetes" {
   config_path = "~/.kube/config"
 }
 
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
+
 # we create a "namespace" resource called "devops-project"
 resource "kubernetes_namespace_v1" "dev_env" {
   metadata {
     name = "devops-project"
   }
+}
+
+resource "helm_release" "argocd" {
+  name       = "argocd"
+  repository = "https://argoproj.github.io/argo-helm" # The official Argo app store
+  chart      = "argo-cd"
+  namespace  = "argocd"
+  create_namespace = true
+  
+  #make sure the namespace is created before we try to install ArgoCD into it
+  depends_on = [kubernetes_namespace_v1.dev_env]
 }
