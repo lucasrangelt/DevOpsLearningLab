@@ -3,8 +3,9 @@ provider "kubernetes" {
   config_path = "~/.kube/config"
 }
 
+# this is basically pip, but for kubernetes.
 provider "helm" {
-  kubernetes {
+  kubernetes = {
     config_path = "~/.kube/config"
   }
 }

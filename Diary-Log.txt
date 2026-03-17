@@ -6,3 +6,5 @@ Day 11: Made folder changes and created my devcontainer to run my developer envi
 Day 12: Fixed bugs on the devcontainer.
 Day 13: Set up my "deployment.yml" file.
 Day 14: Made corections to main files and began preparing ArgoCD.
+Day 15: Ran into multiple internet issues beyond my control. I took the day to work on local side projects.
+Day 16: Switched installation of ArgoCD to be done by Terraform.
