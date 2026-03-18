@@ -27,3 +27,18 @@ resource "helm_release" "argocd" {
   #make sure the namespace is created before we try to install ArgoCD into it
   depends_on = [kubernetes_namespace_v1.dev_env]
 }
+
+resource "helm_release" "jenkins" {
+  name = "jenkins"
+  repository = "https://charts.jenkins.io"
+  chart = "jenkins"
+  namespace = "jenkins"
+  create_namespace = true
+  values = [yamlencode(
+    {
+    controller = {
+      serviceType = "NodePort"
+      }
+    }
+  )]
+}
