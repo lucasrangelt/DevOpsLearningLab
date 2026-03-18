@@ -23,6 +23,7 @@ spec:
         stage('Build') {
             steps {
                 container('jenkins-container') {
+                    // This command builds the Docker image for the application using your Dockerfile
                     sh 'docker build -t heartbeat-app:${env.BUILD_NUMBER} ./app'
                 }
             }
