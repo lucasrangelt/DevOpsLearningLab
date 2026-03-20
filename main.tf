@@ -38,6 +38,11 @@ resource "helm_release" "jenkins" {
     {
     controller = {
       serviceType = "NodePort"
+      persistence = {
+        enabled = true
+        storageClass = "standard"
+        size = "5Gi"
+        }
       }
     }
   )]
