@@ -38,6 +38,8 @@ resource "helm_release" "jenkins" {
     {
     controller = {
       serviceType = "NodePort"
+      runAsUser = 1000
+      fsGroup = 1000
       persistence = {
         enabled = true
         storageClass = "standard"
