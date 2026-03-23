@@ -44,8 +44,9 @@ resource "helm_release" "jenkins" {
         enabled = true
         storageClass = "standard"
         size = "5Gi"
-        }
       }
+      initializeOnce = true
+      installLatestPlugins = true
     }
-  )]
+  })]
 }

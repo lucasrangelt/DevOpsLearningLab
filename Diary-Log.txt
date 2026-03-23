@@ -10,3 +10,4 @@ Day 15: Ran into multiple internet issues beyond my control. I took the day to w
 Day 16: Switched installation of ArgoCD to be done by Terraform.
 Day 17: Chose and set up Jenkins as my CI tool.
 Day 18: Fixed bugs and re-initialization problems with Jenkins, making it persistent.
+Day 19: Kept fixing unexpected behavior related to the "jenkins-0" pod.
