@@ -19,18 +19,27 @@ spec:
     """
         }
     }
+    environment {
+        DOCKER_IMAGE = "lucasrangel2011/heartbeat-app"
+        TAG = "${env.BUILD_NUMBER}"
+    }
     stages {
-        stage('Build') {
+        stage('Build & Push') {
             steps {
                 container('jenkins-container') {
-                    // This command builds the Docker image for the application using your Dockerfile
-                    sh 'docker build -t heartbeat-app:${env.BUILD_NUMBER} ./app'
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        // This command builds the Docker image for the application using your Dockerfile
+                        sh 'docker build -t ${DOCKER_IMAGE}:${TAG} ./app'
+                        sh 'echo \$DOCKER_PASS | docker login -u \$DOCKER_USER --password-stdin'
+                        sh 'docker push ${DOCKER_IMAGE}:${TAG}'
+                    }
                 }
             }
         }
-        stage('Test') {
+        stage('Update Manifest') {
             steps {
-                echo 'Running tests...'
+                echo 'Updating deployment.yml to use version ${TAG}'
+                sh 'sed -i "s|image: .*|image: ${DOCKER_IMAGE}:${TAG}|" deployment.yml'
             }
         }
     }
