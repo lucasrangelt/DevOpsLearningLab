@@ -11,3 +11,9 @@ Day 16: Switched installation of ArgoCD to be done by Terraform.
 Day 17: Chose and set up Jenkins as my CI tool.
 Day 18: Fixed bugs and re-initialization problems with Jenkins, making it persistent.
 Day 19: Kept fixing unexpected behavior related to the "jenkins-0" pod.
+Day 20: Tried multiple solutions to fix the problem with Jenkins not starting. No success.
+Day 21: Added and removed multiple things from the Jenkinsfile. No success.
+Day 22: Finally managed to solve the Jenkins not initializing problem.
+Day 23: Made updates to my Docker account and added a token to be used in Jenkins.
+Day 24: Added my credentials, updating the Jenkinsfile to build and push the image.
+Day 25: Tested 
