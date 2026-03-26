@@ -36,10 +36,21 @@ spec:
                 }
             }
         }
-        stage('Update Manifest') {
+        stage('Update Git Manifest') {
             steps {
-                echo 'Updating deployment.yml to use version ${TAG}'
-                sh 'sed -i "s|image: .*|image: ${DOCKER_IMAGE}:${TAG}|" deployment.yml'
+                container('jenkins-container') {
+                    sh 'apk add git'
+                    withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+                        echo 'Updating deployment.yml to use version ${TAG}'
+                        sh 'sed -i "s|image: .*|image: ${DOCKER_IMAGE}:${TAG}|" deployment.yml'
+
+                        sh 'git config user.email "jenkins@devopslab.com"'
+                        sh 'git config user.name "Jenkins CI"'
+                        sh 'git add deployment.yml'
+                        sh 'git commit -m "Update image to version ${TAG} [skip ci]"' // The [skip ci] tag prevents infinite loops
+                        sh 'git push https://${GIT_USER}:${GIT_PASS}@github.com/${GIT_USER}/DevOpsLearningLab.git HEAD:main'
+                    }
+                }
             }
         }
     }
