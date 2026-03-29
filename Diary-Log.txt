@@ -16,4 +16,7 @@ Day 21: Added and removed multiple things from the Jenkinsfile. No success.
 Day 22: Finally managed to solve the Jenkins not initializing problem.
 Day 23: Made updates to my Docker account and added a token to be used in Jenkins.
 Day 24: Added my credentials, updating the Jenkinsfile to build and push the image.
-Day 25: Tested 
+Day 25: Corrected GitHub token credentials.
+Day 26: Was busy with university.
+Day 27: Was busy with university.
+Day 28: Tested Jenkins by building image, and making further corrections to my Jenkinsfile.
