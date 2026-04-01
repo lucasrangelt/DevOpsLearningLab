@@ -42,6 +42,7 @@ spec:
                 container('jenkins-container') {
                     sh 'apk add git'
                     withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+                        sh 'git config --global --add safe.directory /home/jenkins/agent/workspace/Heartbeat-Pipeline'
                         echo 'Updating deployment.yml to use version ${TAG}'
                         sh 'sed -i "s|image: .*|image: ${DOCKER_IMAGE}:${TAG}|" deployment.yml'
 

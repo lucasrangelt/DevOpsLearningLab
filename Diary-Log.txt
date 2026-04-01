@@ -20,3 +20,5 @@ Day 25: Corrected GitHub token credentials.
 Day 26: Was busy with university.
 Day 27: Was busy with university.
 Day 28: Tested Jenkins by building image, and making further corrections to my Jenkinsfile.
+Day 29: Was busy with university paperwork.
+Day 30: Tried to build image again on Jenkins UI, but couldn't.
