@@ -8,7 +8,7 @@ def health():
     return jsonify (
         status="Healthy",
         hostname=socket.gethostname(),
-        message="The show must go on"
+        message="DevOps Infrastructure - V1"
     )
 
 if __name__ == "__main__":

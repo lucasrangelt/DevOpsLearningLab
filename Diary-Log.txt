@@ -22,3 +22,6 @@ Day 27: Was busy with university.
 Day 28: Tested Jenkins by building image, and making further corrections to my Jenkinsfile.
 Day 29: Was busy with university paperwork.
 Day 30: Tried to build image again on Jenkins UI, but couldn't.
+Day 31: Was busy studying my previous project.
+Day 1: Was busy with university again.
+Day 2: 
