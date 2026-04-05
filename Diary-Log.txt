@@ -26,3 +26,4 @@ Day 31: Was busy studying my previous project.
 Day 1: Was busy with university again.
 Day 2: Tested ArgoCD integrated with Jenkins.
 Day 3: Tested the whole project to make sure everything is working and began to write the "ReadMe.md" file.
+Day 4: Wrote the ReadMe and Journal.md files.
